@@ -16,9 +16,7 @@ class _WelcomeState extends State<Welcome> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // ส่วนครึ่งบน (สีขาวตาม background ของ Scaffold)
           Expanded(flex: 1, child: Container(width: double.infinity)),
-          // ส่วนครึ่งล่าง (สีฟ้า)
           Expanded(
             flex: 3,
             child: Container(
