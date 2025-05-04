@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class circle_Story extends StatelessWidget {
   final String stroyName;
   final String imageUrl;
@@ -22,19 +21,19 @@ class circle_Story extends StatelessWidget {
                 width: 3.0,
               ),
             ),
-          child: Padding(
-            padding: const EdgeInsets.all(1.0),
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white, width: 2),
-                image: DecorationImage(
-                  image: NetworkImage(imageUrl),
-                  fit: BoxFit.cover,
+            child: Padding(
+              padding: const EdgeInsets.all(1.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.white, width: 2),
+                  image: DecorationImage(
+                    image: NetworkImage(imageUrl),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
-          ),
           ),
           SizedBox(height: 3),
           Text(stroyName, style: TextStyle(fontWeight: FontWeight.bold)),
@@ -50,11 +49,13 @@ class WidgetExplore extends StatelessWidget {
   final String postMainName;
   final String postSecName;
   final String imageUrl;
+  final String exploreImage;
   WidgetExplore({
     super.key,
     required this.postMainName,
     required this.postSecName,
-    required this.imageUrl
+    required this.imageUrl,
+    required this.exploreImage,
   });
 
   @override
@@ -89,9 +90,7 @@ class WidgetExplore extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Colors.white,
                           border: Border.all(color: Colors.white, width: 2),
-                          image: DecorationImage(
-                            image: NetworkImage(imageUrl)
-                            ),
+                          image: DecorationImage(image: NetworkImage(imageUrl)),
                         ),
                       ),
                     ),
@@ -129,7 +128,21 @@ class WidgetExplore extends StatelessWidget {
                 borderRadius: BorderRadius.circular(40),
                 color: Colors.white,
               ),
-              child: Container(width: 390, height: 50),
+              child: Container(
+                width: 390,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: Colors.blue,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image(
+                    image: AssetImage(exploreImage),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
             ),
           ],
         ),

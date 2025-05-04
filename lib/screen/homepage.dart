@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:social/util/util_storyies.dart';
 
@@ -60,8 +63,7 @@ class _HomepageState extends State<Homepage> {
                       circle_Story(
                         stroyName: "Benjamin",
                         imageUrl:
-                            "https://hips.hearstapps.com/hmg-prod/images/benjamin-franklin_editedjpg.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"
-                            ,
+                            "https://hips.hearstapps.com/hmg-prod/images/benjamin-franklin_editedjpg.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
                       ),
                       circle_Story(
                         stroyName: "Farita",
@@ -90,21 +92,42 @@ class _HomepageState extends State<Homepage> {
               SizedBox(height: 24),
               WidgetExplore(
                 postMainName: "Claire Dangais",
-                postSecName: "@ClaireD15", imageUrl: 'https://cdn.lucidpic.com/cdn-cgi/image/w=600,format=auto,metadata=none/66c445a35f781.png',
+                postSecName: "@ClaireD15",
+                imageUrl:
+                    'https://cdn.lucidpic.com/cdn-cgi/image/w=600,format=auto,metadata=none/66c445a35f781.png',
+                exploreImage: "assets/images/bmth.jpg",
               ),
               WidgetExplore(
                 postMainName: "Farita Smith",
-                postSecName: "@SmithFa", imageUrl: 'https://cdn.lucidpic.com/cdn-cgi/image/w=600,format=auto,metadata=none/66c4384702f8f.png',
+                postSecName: "@SmithFa",
+                imageUrl:
+                    'https://cdn.lucidpic.com/cdn-cgi/image/w=600,format=auto,metadata=none/66c4384702f8f.png',
+                exploreImage: "assets/images/mark.jpg",
               ),
               WidgetExplore(
                 postMainName: "Benjamin Franklin",
-                postSecName: "@Benlnwza", imageUrl: 'https://hips.hearstapps.com/hmg-prod/images/benjamin-franklin_editedjpg.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*',
+                postSecName: "@Benlnwza",
+                imageUrl:
+                    'https://hips.hearstapps.com/hmg-prod/images/benjamin-franklin_editedjpg.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*',
+                exploreImage: "assets/images/dogsleep.jpg",
               ),
             ],
           ),
         ],
       ),
+      extendBody: true,
       backgroundColor: Colors.white,
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        color: const Color.fromARGB(230, 87, 144, 223),
+        items: [
+          Icon(Icons.home_filled, size: 24, color: Colors.white),
+          Icon(Icons.search_rounded, size: 24, color: Colors.white),
+          Icon(Icons.add_box_outlined , size: 24, color: Colors.white),
+          Icon(Icons.video_library, size: 24, color: Colors.white),
+          Icon(Icons.person, size: 24, color: Colors.white),
+        ],
+      ),
     );
   }
 }
