@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:social/screen/homepage.dart';
+import 'package:social/screen/socail/homepage.dart';
+import 'package:social/screen/socail/mainpage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => Homepage()),
+                MaterialPageRoute(builder: (context) => Mainpage()),
               );
             },
             style: ElevatedButton.styleFrom(backgroundColor: Colors.white),

@@ -1,17 +1,11 @@
-import 'dart:ffi';
 
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+
 import 'package:social/util/util_storyies.dart';
 
-class Homepage extends StatefulWidget {
+class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
-  @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,17 +111,7 @@ class _HomepageState extends State<Homepage> {
       ),
       extendBody: true,
       backgroundColor: Colors.white,
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.transparent,
-        color: const Color.fromARGB(230, 87, 144, 223),
-        items: [
-          Icon(Icons.home_filled, size: 24, color: Colors.white),
-          Icon(Icons.search_rounded, size: 24, color: Colors.white),
-          Icon(Icons.add_box_outlined , size: 24, color: Colors.white),
-          Icon(Icons.video_library, size: 24, color: Colors.white),
-          Icon(Icons.person, size: 24, color: Colors.white),
-        ],
-      ),
+     
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social/screen/auth/login.dart';
-import 'package:social/util/util_welcome.dart';
+
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
