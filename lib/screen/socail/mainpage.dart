@@ -8,7 +8,7 @@ import 'package:social/screen/socail/vdopage.dart';
 import 'package:social/util/navbar.dart';
 
 final screen = [Homepage(), Searchpage(), Addpage(), Vdopage(), Personpage()];
-
+int _selectedIndex = 0;
 
 class Mainpage extends StatefulWidget {
   const Mainpage({super.key});
@@ -20,14 +20,20 @@ class Mainpage extends StatefulWidget {
 class _MainpageState extends State<Mainpage> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
   
-int _selectedIndex = 0;
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: screen[_selectedIndex],
       extendBody: true,
-      bottomNavigationBar: Navbar()
+      bottomNavigationBar: Navbar(
+        selectedIndex: _selectedIndex, 
+        onIndexChannged: (index){
+          setState(() {
+            _selectedIndex = index;
+          });
+        },)
     );
   }
 }
