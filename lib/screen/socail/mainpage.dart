@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:social/screen/socail/addpage.dart';
 import 'package:social/screen/socail/homepage.dart';
@@ -7,8 +6,6 @@ import 'package:social/screen/socail/searchpage.dart';
 import 'package:social/screen/socail/vdopage.dart';
 import 'package:social/util/navbar.dart';
 
-final screen = [Homepage(), Searchpage(), Addpage(), Vdopage(), Personpage()];
-int _selectedIndex = 0;
 
 class Mainpage extends StatefulWidget {
   const Mainpage({super.key});
@@ -18,9 +15,8 @@ class Mainpage extends StatefulWidget {
 }
 
 class _MainpageState extends State<Mainpage> {
-  final navigationKey = GlobalKey<CurvedNavigationBarState>();
-  
-
+  final screen = [Homepage(), Searchpage(), Addpage(), Vdopage(), Personpage()];
+int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +25,9 @@ class _MainpageState extends State<Mainpage> {
       extendBody: true,
       bottomNavigationBar: Navbar(
         selectedIndex: _selectedIndex, 
-        onIndexChannged: (index){
+        onIndexChannged: (index){ //ย้ายไปหน้าที่ index ใน List screen
           setState(() {
-            _selectedIndex = index;
+            _selectedIndex = index; //แทนค่า selectedIndex = index
           });
         },)
     );

@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-class Navbar extends StatelessWidget {
+class Navbar extends StatefulWidget {
   final int selectedIndex;
   final Function(int) onIndexChannged;
   Navbar({
@@ -10,6 +10,11 @@ class Navbar extends StatelessWidget {
     required this.onIndexChannged,
     });
 
+  @override
+  State<Navbar> createState() => _NavbarState();
+}
+
+class _NavbarState extends State<Navbar> {
   final _navigationKey = GlobalKey<CurvedNavigationBarState>();
 
   @override
@@ -18,8 +23,10 @@ class Navbar extends StatelessWidget {
         key: _navigationKey,
         backgroundColor: Colors.transparent,
         color: const Color.fromARGB(230, 87, 144, 223),
-        index: selectedIndex,
-        onTap: onIndexChannged,
+        animationDuration: Duration(milliseconds: 300),
+        height: 70,
+        index: widget.selectedIndex,
+        onTap: widget.onIndexChannged,
         items: [
           Icon(Icons.home_filled, size: 30, color: Colors.white),
           Icon(Icons.search_rounded, size: 30, color: Colors.white),
